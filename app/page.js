@@ -139,7 +139,7 @@ export default function Home() {
           {inventory.map(({name, quantity}) => (
             <Box
               key={name}
-              width={{xs:"40%", md:"100%"}}
+              width={{xs:"45%", md:"100%"}}
               minHeight="150px"
               display={'flex'}
               justifyContent={'space-between'}
@@ -154,6 +154,7 @@ export default function Home() {
               </Typography>
               <Typography variant={'h3'} color={'#333'} textAlign={'center'}
                 fontSize={{xs:"20px"}}
+                marginLeft={{xs:"20px"}}
               >
                 Quantity: {quantity}
               </Typography>
