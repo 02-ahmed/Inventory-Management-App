@@ -18,7 +18,7 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 400,
+  width: '90%',
   bgcolor: 'white',
   border: '2px solid #000',
   boxShadow: 24,
@@ -120,16 +120,18 @@ export default function Home() {
       <Button variant="contained" onClick={handleOpen}>
         Add New Item
       </Button>
-      <Box border={'1px solid #333'}>
+      <Box border={'1px solid #333'} width={{xs:"87%", sm:"800px"}}>
         <Box
-          width="800px"
+          width="100%"
           height="100px"
           bgcolor={'#ADD8E6'}
           display={'flex'}
           justifyContent={'center'}
           alignItems={'center'}
         >
-          <Typography variant={'h2'} color={'#333'} textAlign={'center'}>
+          <Typography variant={'h2'} color={'#333'} textAlign={'center'}
+            
+          >
             Inventory
           </Typography>
         </Box>
@@ -137,7 +139,7 @@ export default function Home() {
           {inventory.map(({name, quantity}) => (
             <Box
               key={name}
-              width="100%"
+              width={{xs:"40%", md:"100%"}}
               minHeight="150px"
               display={'flex'}
               justifyContent={'space-between'}
@@ -145,13 +147,19 @@ export default function Home() {
               bgcolor={'#f0f0f0'}
               paddingX={5}
             >
-              <Typography variant={'h3'} color={'#333'} textAlign={'center'}>
+              <Typography variant={'h3'} color={'#333'} textAlign={'center'}
+                fontSize={{xs:"20px"}}
+              >
                 {name.charAt(0).toUpperCase() + name.slice(1)}
               </Typography>
-              <Typography variant={'h3'} color={'#333'} textAlign={'center'}>
+              <Typography variant={'h3'} color={'#333'} textAlign={'center'}
+                fontSize={{xs:"20px"}}
+              >
                 Quantity: {quantity}
               </Typography>
-              <Button variant="contained" onClick={() => removeItem(name)}>
+              <Button variant="contained" onClick={() => removeItem(name)}
+                width={{xs:"10px"}}
+              >
                 Remove
               </Button>
             </Box>
